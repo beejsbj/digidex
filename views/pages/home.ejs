@@ -1,6 +1,8 @@
 <%- include('../partials/header.ejs') %>
 
 	<inner-column>
-		<h1 class="loud-voice">Home</h1>
+		<h1 class="loud-voice">
+			<span><%- get.asText(data.title) %></span>
+		</h1>
 	</inner-column>
 <%- include('../partials/footer.ejs') %>
