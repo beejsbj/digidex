@@ -29,6 +29,20 @@ app.get("/monsters/:name", function (request, response) {
 	response.render("pages/monster-detail/monster-detail", { monsters, monster });
 });
 
+// prismic data
+app.get( "/digis", async function( request, response ) {
+	const digis = await client.getAllByType('monster-card');
+	response.render("digis", { monsters: digis });
+})
+
+app.get("/digi/:slug", async function( request, response ){
+	const monster = await client.getByUID('monster-card', request.params.slug);
+	response.render("digi", { monster: monster.data });
+
+});
+
+
+
 //page not found
 app.use(function (request, response) {
 	response.status(404).render("pages/404", { query: request.url });
