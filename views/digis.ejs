@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') %>
+
+	<section>
+		<inner-column>
+			<h1 class="loud-voice">Digis</h1>
+			<ul class="monsters">
+
+			<% monsters.forEach( function (monster) { %>
+				<li>		
+					<monster-card>
+						<h3 class="attention-voice">
+							<%=get.asText(monster.data['monster-name'])%>
+						</h3>
+					</monster-card>
+				</li>
+			<% } ) %>
+			
+			</ul>
+		</inner-column>
+	</section>
+<%- include('partials/footer.ejs') %>
