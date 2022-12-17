@@ -2,7 +2,7 @@ import express from "express";
 import monsters from "./digidex.json" assert { type: "json" };
 
 const app = express();
-const PORT = 1996;
+const PORT = 1986;
 app.listen(PORT, function () {
 	console.log("listening to port");
 });

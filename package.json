@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "app.js",
-    "watch": "sass -w styles/site.scss styles/minified.css"
+    "watch": "npx nodemon & sass -w styles/site.scss styles/minified.css"
   },
   "author": "",
   "license": "ISC",
