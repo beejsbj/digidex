@@ -1,6 +1,5 @@
 <%- include('../partials/header.ejs') %>
 
-
 <section>
 	<inner-column>
 	<h1 class="loud-voice"><%=monster.name%></h1>
@@ -10,11 +9,11 @@
 	<evolution-list>
 		<%- include(
 				'modules/digi-forms/digi-forms.ejs', 
-				{ evolutions: monster.priorEvolutions }
+				{ evolutions: monster.priorEvolutions, monsters }
 			) %>
 		<%- include(
 				'modules/digi-forms/digi-forms.ejs', 
-				{ evolutions: monster.nextEvolutions }
+				{ evolutions: monster.nextEvolutions, monsters }
 			) %>
 	</evolution-list>	
 </inner-column>

@@ -3,22 +3,36 @@
 	<section>
 		<inner-column>
 			<h1 class="loud-voice">List</h1>
+			<h2 class="attention-voice">
+				Page: <%=page%>
+			</h2>
+			<nav>
+			<% if (page > 0) { %>
+				<a href="<%=Number(page) - 1%>">Previous Page</a>
+			<%	} %>
+			<% if (page < 71) { %>
+				<a href="<%=Number(page) + 1%>">Next Page</a>
+			<%	} %>
+				
+			</nav>
 			<ul class="monsters">
 
-			<% monsters.forEach( function (monster) { 
+			<% for (var monster of monsters) { 
 			%>
 				<li>		
 					<monster-card>
 						<h3 class="attention-voice">
 							<%=monster.name%>
 						</h3>
-						
-						<a href="monsters/<%=monster.name%>">
+						<picture>
+							<img src="<%=monster.images[0].href%>">
+						</picture>
+						<a href="/monster/<%=monster.id%>">
 							Read More
 						</a>
 					</monster-card>
 				</li>
-			<% } ) %>
+			<% }  %>
 			
 			</ul>
 		</inner-column>
