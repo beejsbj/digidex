@@ -1,93 +1,109 @@
 /* P reset */
-@import 'preset';
+@import "preset";
 
 /* S etup */
-@import 'setup';
+@import "setup";
 
 /* S setings */
-@import 'settings';
-@import 'developer-styles';
+@import "settings";
+@import "developer-styles";
 
 /* S tructure */
-@import 'structure';
+@import "structure";
 
 /* T ypography */
-@import 'typography';
+@import "typography";
 
 /* C omponents */
-@import 'components';
+@import "components";
 
 /* S tuff :modules */
-@import 'modules';
+@import "modules";
 
 /* S ections and more stuff */
 
 /* then other contextual styles */
 body {
-  background-color: var(--paper);
-  color: var(--ink);
+	background-color: var(--paper);
+	color: var(--ink);
 }
 
 .my-fantastic-image {
-  max-width: 300px;
-  border-bottom-right-radius: 30px;
+	max-width: 300px;
+	border-bottom-right-radius: 30px;
 }
 nav {
-  display: flex;
-  gap: 10px;
+	display: flex;
+	gap: 10px;
 }
-
-
 
 ul.monsters {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 20px;
 }
 
-@media (min-width: 700px){
-  graphic-description {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
+@media (min-width: 700px) {
+	graphic-description {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
 }
 
 evolution-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
 }
 
 evolution-list ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .has-condition {
-  border: 3px dashed red;
+	border: 3px dashed red;
 }
 
 evolution-list li.no-image {
-  display: none;
+	display: none;
 }
 
 skill-list ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 data-module {
-  grid-column: 2/-1;
+	grid-column: 2/-1;
+	ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.field {
+		justify-self: center;
+	}
+	.field picture {
+		max-width: 50px;
+	}
 }
-data-module ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
 
-}
-data-module .field {
-  justify-self: center;
-}
-data-module .field picture {
-  max-width: 50px;
+monster-card {
+	position: relative;
+	picture {
+		aspect-ratio: 1 / 1;
+	}
+	p {
+		position: absolute;
+		display: none;
+		background: var(--color);
+		z-index: 1;
+		width: 30ch;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&.has-condition:hover p {
+		display: block;
+	}
 }

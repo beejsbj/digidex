@@ -283,18 +283,34 @@ skill-list ul {
 data-module {
   grid-column: 2/-1;
 }
-
 data-module ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
 data-module .field {
   justify-self: center;
 }
-
 data-module .field picture {
   max-width: 50px;
+}
+
+monster-card {
+  position: relative;
+}
+monster-card picture {
+  aspect-ratio: 1/1;
+}
+monster-card p {
+  position: absolute;
+  display: none;
+  background: var(--color);
+  z-index: 1;
+  width: 30ch;
+  left: 50%;
+  transform: translateX(-50%);
+}
+monster-card.has-condition:hover p {
+  display: block;
 }
 
 /*# sourceMappingURL=minified.css.map */
